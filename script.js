@@ -1,29 +1,34 @@
-document.getElementById('upload').addEventListener('change', function (e) {
-  const file = e.target.files[0];
-  if (file) {
-    Papa.parse(file, {
-      header: true,
-      complete: function (results) {
-        mostrarPatentes(results.data);
-      }
-    });
-  }
+window.addEventListener('DOMContentLoaded', () => {
+  Papa.parse('patentes.csv', {
+    download: true,
+    header: true,
+    delimiter: ';',
+    complete: function(results) {
+      mostrarPatentes(results.data);
+    }
+  });
 });
 
 function mostrarPatentes(data) {
   const lista = document.getElementById('patentes-list');
   lista.innerHTML = '';
 
-  data.filter(p => p['Título:'] && p['Universidad de Origen:']).slice(0, 10).forEach((patente, i) => {
+  const patentesFiltradas = data.filter(p => p['Título:'] && p['Título:'].trim() !== '-' && p['Universidad de Origen:']).slice(0, 15);
+
+  patentesFiltradas.forEach((patente) => {
     const div = document.createElement('div');
     div.className = 'card';
     div.innerHTML = `
       <h3>${patente['Título:']}</h3>
       <p><strong>Universidad:</strong> ${patente['Universidad de Origen:']}</p>
-      <button onclick="generarRecursos('${patente['Título:'].replace(/'/g, "\\'")}')">Generar recursos educativos</button>
+      <button onclick="generarRecursos('${escapeQuotes(patente['Título:'])}')">Generar recursos educativos</button>
     `;
     lista.appendChild(div);
   });
+}
+
+function escapeQuotes(text) {
+  return text.replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
 
 function generarRecursos(titulo) {
