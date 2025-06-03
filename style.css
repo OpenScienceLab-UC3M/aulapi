@@ -1,0 +1,215 @@
+
+body {
+    font-family: sans-serif;
+    background: #f9fafb;
+    color: #1f2937;
+    margin: 0;
+}
+header {
+    background: #1e3a8a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+main {
+    padding: 1rem;
+}
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.filters input, .filters select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+}
+.card {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.toggle-button {
+    margin-top: 0.5rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+.details {
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.card { margin-bottom: 2rem; }
+.section { margin-top: 1rem; line-height: 1.5; }
+.quiz-result { font-weight: bold; margin-top: 0.5rem; }
+form button { margin-top: 0.5rem; padding: 0.3rem 0.6rem; background: #2563eb; color: white; border: none; border-radius: 0.3rem; cursor: pointer; }
+form label { display: block; margin: 0.2rem 0; }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+.intro-highlight {
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    padding: 2rem;
+    border-left: 5px solid #2563eb;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+.intro-highlight:hover {
+    transform: scale(1.01);
+}
+.intro-highlight h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e3a8a;
+}
+.intro-highlight ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+.intro-highlight ul li {
+    margin-bottom: 0.5rem;
+}
+
+
+.intro-features {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+}
+.intro-title {
+    text-align: center;
+    font-size: 24pt;
+    color: #1e3a8a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.title2 {
+    text-align: center;
+    font-size: 20pt;
+    color: #1e3a8a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.intro-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 2rem;
+}
+.grid-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.feature-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-left: 6px solid #2563eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e40af;
+}
+.feature-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+
+.feature-section {
+    margin-bottom: 3rem;
+    background: #f1f5f9;
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.feature-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: all 0.2s ease;
+}
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1d4ed8;
+}
+.feature-card p {
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+
+.feature-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+.toggle-intel-btn {
+    background-color: #1d4ed8;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.toggle-intel-btn:hover {
+    background-color: #1e40af;
+}
+.hidden {
+    display: none;
+}
+
+.toggle-info-btn{
+	
+	width: 100%;
+	font-size: 16pt;
+	text-align: center;
+
+}
+
+@media (min-width: 768px) {
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
