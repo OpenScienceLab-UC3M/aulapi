@@ -1,24 +1,19 @@
+
 body {
   font-family: sans-serif;
   padding: 2rem;
-  background: #f0f4f8;
+  background: #f9fafb;
 }
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-}
-h1 {
-  color: #1a202c;
-}
-input {
-  margin-bottom: 1rem;
 }
 .card {
   background: white;
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 0.5rem;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 button {
   margin-top: 0.5rem;
@@ -31,4 +26,7 @@ button {
 }
 button:hover {
   background: #1d4ed8;
+}
+h1, h2 {
+  color: #1f2937;
 }

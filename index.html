@@ -1,23 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduPatentes</title>
+  <title>EduPatent JCyL</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>EduPatentes</h1>
-    <p>Explora patentes universitarias y genera materiales educativos</p>
+    <h1>EduPatent JCyL</h1>
+    <p>Explora la innovación tecnológica en Castilla y León y genera recursos educativos adaptados automáticamente.</p>
+
+    <input type="text" id="buscador" placeholder="Buscar por título, universidad o palabra clave..." style="width: 100%; padding: 0.5rem; margin: 1rem 0;" />
+    <select id="filtro-anio" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+      <option value="">Filtrar por año (todos)</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+    </select>
 
     <div id="patentes-list"></div>
-    <div id="recursos-generados"></div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
