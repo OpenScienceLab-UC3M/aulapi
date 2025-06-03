@@ -13,9 +13,9 @@ function mostrarPatentes(data) {
   const lista = document.getElementById('patentes-list');
   lista.innerHTML = '';
 
-  const patentesFiltradas = data.filter(p => p['Título:'] && p['Título:'].trim() !== '-' && p['Universidad de Origen:']).slice(0, 15);
+  const patentes = data.filter(p => p['Título:'] && p['Título:'].trim() !== '-' && p['Universidad de Origen:']).slice(0, 15);
 
-  patentesFiltradas.forEach((patente) => {
+  patentes.forEach((patente) => {
     const div = document.createElement('div');
     div.className = 'card';
     div.innerHTML = `
@@ -44,3 +44,4 @@ function generarRecursos(titulo) {
     </div>
   `;
 }
+
