@@ -1,23 +1,22 @@
-
 <!DOCTYPE html>
 
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EduPatent JCyL</title>
+<title>Aula PI JCyL</title>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
-<h1>EduPatent JCyL</h1>
+<h1>Aula PI JCyL</h1>
 <p>Explora la innovación tecnológica en Castilla y León y genera recursos educativos automáticamente.</p>
 </header>
 <main>
 <div class="container">
 
 <section class="intro-features">
-<h2 class="intro-title">¿Qué puedes hacer con EduPatent JCyL?</h2>
+<h2 class="intro-title">¿Qué puedes hacer con Aula PI JCyL?</h2>
 <p class="intro-subtitle">Explora, aprende y conéctate con la innovación tecnológica que se está generando en las universidades públicas de Castilla y León.</p>
 <div class="grid-cards">
 <div class="feature-card">
@@ -40,52 +39,6 @@
 
 <br>
 
-<section>
-<div class="text-center my-8">
-    <button class="toggle-info-btn toggle-button">📘 ¿Quieres saber más sobre vigilancia e inteligencia competitiva?</button>
-</div>
-<div class="toggle-info-box hidden">
-<h2 class="text-2xl font-semibold mb-4 text-blue-900">🧠 Vigilancia e Inteligencia Competitiva: Mirar al Futuro desde el Conocimiento</h2>
-<p><strong>¿Qué es la Vigilancia Tecnológica?</strong><br/>
-    Es un proceso sistemático de recopilación y análisis de información del entorno (mercado, ciencia, tecnología, etc.) que permite anticiparse a cambios y detectar oportunidades.</p>
-<p class="mt-2">🔍 <em>Ejemplo:</em> Saber qué tecnologías se están desarrollando en tu sector antes de que lleguen al mercado.</p>
-<p class="mt-4"><strong>¿Y la Inteligencia Competitiva?</strong><br/>
-    Va un paso más allá: transforma la información obtenida por la vigilancia en estrategias de acción concretas para ganar ventaja frente a competidores, crear alianzas o lanzar nuevos productos.</p>
-<p class="mt-2">💡 <em>Ejemplo:</em> Conocer qué patentes están registrando tus competidores puede ayudarte a mejorar tu producto o evitar conflictos legales.</p>
-<h3 class="text-xl font-semibold mt-6 mb-2">🧪 La Investigación Universitaria: Un Motor Invisible (pero muy potente)</h3>
-<p>Aunque muchas veces pasa desapercibida, la universidad no solo forma profesionales, sino que también genera conocimiento nuevo a diario: desde nuevas tecnologías, hasta soluciones para problemas sociales, médicos, industriales o ambientales.</p>
-<p class="mt-2">🔬 En los laboratorios y grupos de investigación de las universidades de Castilla y León se desarrollan:</p>
-<ul class="list-disc list-inside mt-2 mb-4">
-<li>Dispositivos médicos innovadores</li>
-<li>Mejores técnicas agrícolas</li>
-<li>Nuevos materiales sostenibles</li>
-<li>Soluciones tecnológicas aplicables a empresas</li>
-</ul>
-<h3 class="text-xl font-semibold mb-2">🧾 ¿Qué tiene que ver esto con las Patentes y Modelos de Utilidad?</h3>
-<p>Cuando una universidad crea una invención con valor técnico y comercial, puede protegerla legalmente a través de:</p>
-<ul class="list-disc list-inside mt-2 mb-2">
-<li><strong>Patentes:</strong> para invenciones de mayor complejidad.</li>
-<li><strong>Modelos de utilidad:</strong> para mejoras o innovaciones más simples.</li>
-</ul>
-<p>Esto permite:</p>
-<ul class="list-disc list-inside mt-2 mb-4">
-<li>✅ Proteger el conocimiento generado</li>
-<li>✅ Fomentar la transferencia al sector productivo</li>
-<li>✅ Impulsar la innovación regional</li>
-</ul>
-<h3 class="text-xl font-semibold mb-2">📲 Conoce qué se está investigando (¡de verdad!) en tu comunidad</h3>
-<p>Esta app te permite explorar de forma sencilla y visual:</p>
-<ul class="list-disc list-inside mt-2 mb-2">
-<li>Patentes y modelos de utilidad registrados por las universidades públicas de Castilla y León.</li>
-<li>Áreas tecnológicas en las que están trabajando los grupos de investigación.</li>
-<li>Potencial de colaboración universidad-empresa.</li>
-</ul>
-<p class="mt-2">🔎 <strong>¡Descubre cómo el conocimiento se convierte en innovación real, aquí y ahora!</strong></p>
-</section>
-
-<br>
-<br>
-
 <div class="flourish-embed flourish-map" data-src="visualisation/24699663"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/24699663/thumbnail" width="100%" alt="map visualization" /></noscript></div>
     
 <section>
@@ -97,6 +50,8 @@
 <input id="search" placeholder="Buscar por título, universidad o palabra clave..." type="text"/>
 <select id="universityFilter"><option value="">Todas las universidades</option></select>
 <select id="yearFilter"><option value="">Todos los años</option></select>
+<select id="typeFilter"><option value="">Todos los tipos</option></select>
+
 </div>
 
 <div id="patentList"></div>
