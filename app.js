@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pagination = document.getElementById("pagination");
 
     let currentPage = 1;
-    const itemsPerPage = 10;
+    const itemsPerPage = 5;
 
     function renderPagination(totalPages, data) {
         pagination.innerHTML = "";
