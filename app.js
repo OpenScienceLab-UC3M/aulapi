@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = "card";
             card.innerHTML = `
                 <div class="resultado">
-                    <h2>${p["Titulo de la patente"] || "Sin título"}</h2>
-                    <p><strong>Resumen:</strong> ${p["Breve descripción/Resumen"] || "No disponible"}</p>
+                    <h2>${capitalizeText(p["Titulo de la patente"], "Titulo de la patente") || "Sin título"}</h2>
+					<p><strong>Resumen:</strong> ${capitalizeText(p["Breve descripción/Resumen"], "Breve descripción/Resumen") || "No disponible"}</p>
                     <p><strong>Palabras clave:</strong> ${p["Palabras Clave"] || "No disponible"}</p>
                     <div class="flex">
                         <p><strong>Tipo:</strong> ${p["Tipo"] || "No disponible"}</p>
@@ -213,23 +213,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function capitalizeText(text) {
-        if (!text || typeof text !== "string") return text;
-        const exceptions = [
-            "de","del","la","las","el","los","y","en","para","por","con","a",
-            "un","una","unos","unas","o","u","e","que","como","su","sus","al"
-        ];
-        return text
-            .toLocaleLowerCase("es-ES")
-            .split(/\s+/)
-            .map((word, i) => {
-                if (i > 0 && exceptions.includes(word)) {
-                    return word;
-                }
-                return word.charAt(0).toUpperCase() + word.slice(1);
-            })
-            .join(" ");
-    }
+	function capitalizeText(text, field) {
+		if (!text || typeof text !== "string") return text;
+
+		// Capitalización de "Titulo de la patente" y "Breve descripción/Resumen"
+		if (field === "Titulo de la patente" || field === "Breve descripción/Resumen") {
+			return text
+				.toLowerCase()  // Convertimos todo a minúsculas primero
+				.replace(/(^\s*\w|[.!?]\s*\s*\w)/g, match => match.toUpperCase());  // Capitalizamos la primera letra de cada frase
+		}
+
+		// Capitalización estándar para otros campos (mayúscula solo al inicio de cada palabra, excepto preposiciones)
+		const exceptions = [
+			"de", "del", "la", "las", "el", "los", "y", "en", "para", "por", "con", "a",
+			"un", "una", "unos", "unas", "o", "u", "e", "que", "como", "su", "sus", "al"
+		];
+
+		return text
+			.toLowerCase()
+			.split(/\s+/)
+			.map((word, i) => {
+				// No capitalizamos las palabras que están en la lista de excepciones, excepto la primera palabra
+				if (i > 0 && exceptions.includes(word)) {
+					return word; // No capitalizar las palabras de excepción
+				}
+				return word.charAt(0).toUpperCase() + word.slice(1);  // Capitalizamos la primera letra de cada palabra
+			})
+			.join(" ");
+	}
 
     patentes.forEach(p => {
         Object.keys(p).forEach(key => {
