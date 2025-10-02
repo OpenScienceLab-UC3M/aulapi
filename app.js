@@ -97,6 +97,20 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
 
+        // 👉 Ordenar de más recientes a más antiguas
+        filtered.sort((a, b) => {
+            const parseDate = (fechaStr) => {
+                if (!fechaStr) return new Date(0);
+                const partes = fechaStr.split("/");
+                if (partes.length === 3) {
+                    const [dia, mes, anio] = partes;
+                    return new Date(`${anio}-${mes}-${dia}`);
+                }
+                return new Date(0);
+            };
+            return parseDate(b["Fecha de solicitud"]) - parseDate(a["Fecha de solicitud"]);
+        });
+
         // 👉 Si no hay resultados, mostramos mensaje
         if (filtered.length === 0) {
             const selectedUniversity = universityFilter.value;
@@ -219,11 +233,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Capitalización de "Titulo de la patente" y "Breve descripción/Resumen"
 		if (field === "Titulo de la patente" || field === "Breve descripción/Resumen") {
 			return text
-				.toLowerCase()  // Convertimos todo a minúsculas primero
-				.replace(/(^\s*\w|[.!?]\s*\s*\w)/g, match => match.toUpperCase());  // Capitalizamos la primera letra de cada frase
+				.toLowerCase()
+				.replace(/(^\s*\w|[.!?]\s*\s*\w)/g, match => match.toUpperCase());
 		}
 
-		// Capitalización estándar para otros campos (mayúscula solo al inicio de cada palabra, excepto preposiciones)
+		// Capitalización estándar para otros campos
 		const exceptions = [
 			"de", "del", "la", "las", "el", "los", "y", "en", "para", "por", "con", "a",
 			"un", "una", "unos", "unas", "o", "u", "e", "que", "como", "su", "sus", "al"
@@ -233,11 +247,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			.toLowerCase()
 			.split(/\s+/)
 			.map((word, i) => {
-				// No capitalizamos las palabras que están en la lista de excepciones, excepto la primera palabra
 				if (i > 0 && exceptions.includes(word)) {
-					return word; // No capitalizar las palabras de excepción
+					return word;
 				}
-				return word.charAt(0).toUpperCase() + word.slice(1);  // Capitalizamos la primera letra de cada palabra
+				return word.charAt(0).toUpperCase() + word.slice(1);
 			})
 			.join(" ");
 	}
